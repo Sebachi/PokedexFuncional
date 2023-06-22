@@ -1,5 +1,4 @@
 import {URL_API} from "./data.js"
-import "../styles/style.css"
 const d = document
 const smallPokemons = d.getElementById('smallPokemons')
 const bigPokemon = d.getElementById('bigPokemon')
@@ -22,9 +21,7 @@ const getPokemon = async () => {
 
   const printSmallPokemons = async () => {
     const pokemons = await getPokemon()
-    console.log(pokemons);
      for (let i = 1; i < pokemons.length; i++) {
-        console.log(pokemons[i].forms.name);
          smallPokemons.innerHTML += `<h2> OTHeRS</h2>
          <section class="pokemons">
          <figure>
@@ -38,7 +35,4 @@ const getPokemon = async () => {
   
  
  }
-
-printSmallPokemons()
-
-
+ 
