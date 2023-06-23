@@ -1,5 +1,5 @@
 import {URL_API} from "./data.js"
-import "../styles/style.css"
+import "../styles/style.scss"
 const d = document
 import { printSmallPokemons } from "./printPokemons.js"
 
