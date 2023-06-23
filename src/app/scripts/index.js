@@ -1,5 +1,5 @@
 import {URL_API} from "./data.js"
-import "../styles/style.scss"
+import "../styles/Style.scss"
 const d = document
 import { printSmallPokemons } from "./printPokemons.js"
 
@@ -20,3 +20,4 @@ const printBigPokemon = () => {
 
 
 
+n
