@@ -8,7 +8,7 @@ import { printBigPokemons } from "./printPokemons.js"
 d.addEventListener('DOMContentLoaded', async () => {
 
  await printSmallPokemons(1,5)
- await printBigPokemons(3)
+ await printBigPokemons(445)
 
 
 })
