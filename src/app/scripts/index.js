@@ -18,10 +18,3 @@ const printBigPokemon = () => {
 
 })
 
-
-
-<<<<<<< HEAD
->>>>>>> development
-=======
-n
->>>>>>> development
