@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-// import "../styles/style.scss";
-=======
 import {URL_API} from "./data.js"
 import "../styles/Style.scss"
 const d = document
