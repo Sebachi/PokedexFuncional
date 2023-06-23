@@ -16,9 +16,9 @@ const getPokemon = async (index) => {
     }
   }
 
-  export   const printSmallPokemons = async () => {
+  export   const printSmallPokemons = async (a,b) => {
     smallPokemons.innerHTML = ``
-     for (let i = 1; i < 5; i++) {
+     for (let i = a; i < b; i++) {
         const pokemonsData = await getPokemon(i)
         const {other} =  pokemonsData['sprites'];
         const spritesPokemon = other['official-artwork'].front_default
