@@ -11,8 +11,15 @@
 </head>
 <body>
     <header>
+        <div class="tittle"> 
         <img src="./assets/pokeballico.png" alt="pokeball_ico" class="pokeball_ico">
-        <h1 class="titulo">PoKéDeX</h1>
+        <h1 class="titulo">PoKéDeX</h1></div>
+        <form autocomplete="off" action="/action_page.php" class="pokemon_search">
+            <div class="autocomplete">
+              <input id="input_pokemon" type="text" name="pokemonName" placeholder="Write a pokemon ...">
+            </div>
+            <input type="submit" class="pokemon_submit" value="Search">
+          </form>
     </header>
     <main id="bigPokemon">  
         <section class="pokemon">

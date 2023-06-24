@@ -40,7 +40,7 @@ const arrayBigpokemon = []
   const height = pokemonsData['height']
   const weight = pokemonsData['weight']
   const sprite = pokemonsData['sprites']['other']['official-artwork'].front_default
-
+const id = pokemonsData['id']
       bigPokemon.innerHTML =
     `
        <section class="pokemon">
@@ -59,7 +59,7 @@ const arrayBigpokemon = []
             <li>WEIGHT</li>
         </ul>
         <ul class="data">
-            <li>${pokemonId}</li>
+            <li>${id}</li>
             <li>100</li>
             <li>${type}</li>
             <li>${ability}</li>
