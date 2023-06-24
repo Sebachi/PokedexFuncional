@@ -7,18 +7,18 @@
     <link rel="stylesheet" href="./app/styles/Style.css"> 
     <link rel="shortcut icon" href="https://seeklogo.com/images/P/pokeball-logo-DC23868CA1-seeklogo.com.png">
     <title>Pokédex</title>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js" integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
     <header>
         <div class="tittle"> 
         <img src="./assets/pokeballico.png" alt="pokeball_ico" class="pokeball_ico">
         <h1 class="titulo">PoKéDeX</h1></div>
-        <form autocomplete="off" action="/action_page.php" class="pokemon_search">
+        <form autocomplete="off"  class="pokemon_search">
             <div class="autocomplete">
               <input id="input_pokemon" type="text" name="pokemonName" placeholder="Write a pokemon ...">
             </div>
-            <input type="submit" class="pokemon_submit" value="Search">
+            <input type="submit" class="pokemon_submit" value="Search" id="search_pokemon">
           </form>
     </header>
     <main id="bigPokemon">  

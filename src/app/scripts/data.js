@@ -1,6 +1,17 @@
 export const URL_API = "https://pokeapi.co/api/v2/pokemon/"
-
+// import { axios } from "axios"
 const URL_POKEMONS = "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0"
+
+
+export const getPokemon = async (index) => {
+  try {
+    const {data} = await axios.get(`${URL_API}${index}`);
+    return data;
+  } catch (error) {
+    console.log(error);
+    return  error;
+  }
+}
 
 
 

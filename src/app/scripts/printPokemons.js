@@ -4,17 +4,8 @@ import axios from "axios"
 const d = document
 const smallPokemons = d.getElementById('smallPokemons')
 const bigPokemon = d.getElementById('bigPokemon')
+import { getPokemon } from "./data.js"
 
-
-const getPokemon = async (index) => {
-    try {
-      const {data} = await axios.get(`${URL_API}${index}`);
-      return data;
-    } catch (error) {
-      console.log(error);
-      return  error;
-    }
-  }
 
   export   const printSmallPokemons = async (a,b) => {
     smallPokemons.innerHTML = ``
