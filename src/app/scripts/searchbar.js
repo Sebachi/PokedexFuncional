@@ -5,26 +5,28 @@ import { printSmallPokemons, printBigPokemons } from "./printPokemons.js"
 import { getPokemon } from "./data.js"
 
 
-export const newSearchPokemon =  () => {
+export const newSearchPokemon = () => {
+    let isEnterPressed = false;
     const handdletoogle = async () => {
-      const pokemonTarget = await getPokemon(input_pokemon.value)
-      input_pokemon.value = ''
-       const idpokemon = pokemonTarget['id']
-       await printBigPokemons(idpokemon)
-    await printSmallPokemons(idpokemon, (idpokemon + 4))
-    }
-
+      const pokemonTarget = await getPokemon(input_pokemon.value);
+      input_pokemon.value = '';
+      const idpokemon = pokemonTarget['id'];
+      await printBigPokemons(idpokemon);
+      await printSmallPokemons(idpokemon, idpokemon + 4);
+    };
     const handleKeyPress = async (event) => {
-      if (event.key === "Enter") {
-        await handdletoogle()
-        }
-    }
-
+      if (event.key === 'Enter') {
+        isEnterPressed = true;
+        await handdletoogle();
+      }
+    };
     input_pokemon.addEventListener('keypress', handleKeyPress);
 
     search_pokemon.addEventListener('click', async (e) => {
-        e.preventDefault();
-      await handdletoogle()
-    })
-   
-  }
+      e.preventDefault();
+      if (!isEnterPressed) {
+        await handdletoogle();
+      }
+      isEnterPressed = false;
+    });
+  };

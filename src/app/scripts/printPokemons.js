@@ -7,20 +7,22 @@ const bigPokemon = d.getElementById('bigPokemon')
 import { getPokemon } from "./data.js"
 
 
-  export   const printSmallPokemons = async (a,b) => {
-    smallPokemons.innerHTML = ``
-     for (let i = a; i < b; i++) {
-        const pokemonsData = await getPokemon(i)
-        const {other} =  pokemonsData['sprites'];
-        const spritesPokemon = other['official-artwork'].front_default
-         smallPokemons.innerHTML +=
-         `
-              <figure id='${i}'>
-                 <img class="poke_small" src="${spritesPokemon}" alt=""> </figure>`
-
-     }
- }
-
+export const printSmallPokemons = async (a, b) => {
+  smallPokemons.innerHTML = ""
+  if (!(a <= 0) || !(b >= 1281) ) {
+    for (let i = a; i < b; i++) {
+      const pokemonsData = await getPokemon(i);
+      const { other } = pokemonsData['sprites'];
+      const spritesPokemon = other['official-artwork'].front_default;
+      smallPokemons.innerHTML += `
+        <figure id='${i}'>
+          <img class="poke_small" src="${spritesPokemon}" alt="">
+        </figure>
+      `;
+    }
+  }
+  else{ alert('No more pokemons')}
+}
 const arrayBigpokemon = []
  export const printBigPokemons = async (pokemonId) => {
   const pokemonsData =  await getPokemon(pokemonId)

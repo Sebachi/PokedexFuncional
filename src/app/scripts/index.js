@@ -9,7 +9,6 @@ import { newSearchPokemon } from "./searchbar.js"
 d.addEventListener('DOMContentLoaded', async () => {
 
  await printSmallPokemons(1,5)
- await printBigPokemons('articuno')
  autocomplete(input_pokemon, arraypokemon)
  newSearchPokemon()
 })
