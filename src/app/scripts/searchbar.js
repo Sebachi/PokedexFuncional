@@ -27,6 +27,6 @@ export const newSearchPokemon = () => {
       if (!isEnterPressed) {
         await handdletoogle();
       }
-      isEnterPressed = false;
+       isEnterPressed = false;
     });
   };
