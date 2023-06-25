@@ -1,72 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./app/styles/Style.css"> 
-    <link rel="shortcut icon" href="https://seeklogo.com/images/P/pokeball-logo-DC23868CA1-seeklogo.com.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./app/styles/Style.css" />
+    <link
+      rel="shortcut icon"
+      href="https://seeklogo.com/images/P/pokeball-logo-DC23868CA1-seeklogo.com.png"
+    />
     <title>Pokédex</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js" integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-</head>
-<body>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"
+      integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
     <header>
-        <div class="tittle"> 
-        <img src="./assets/pokeballico.png" alt="pokeball_ico" class="pokeball_ico">
-        <h1 class="titulo">PoKéDeX</h1></div>
-        <form autocomplete="off"  class="pokemon_search">
-            <div class="autocomplete">
-              <input id="input_pokemon" type="text" name="pokemonName" placeholder="Write a pokemon ...">
-            </div>
-            <input type="submit" class="pokemon_submit" value="Search" id="search_pokemon">
-          </form>
+      <div class="tittle">
+        <img
+          src="./assets/pokeballico.png"
+          alt="pokeball_ico"
+          class="pokeball_ico"
+        />
+        <h1 class="titulo">PoKéDeX</h1>
+      </div>
+      <form autocomplete="off" class="pokemon_search">
+        <div class="autocomplete">
+          <input
+            id="input_pokemon"
+            type="text"
+            name="pokemonName"
+            placeholder="Write a pokemon ..."
+          />
+        </div>
+        <input
+          type="submit"
+          class="pokemon_submit"
+          value="Search"
+          id="search_pokemon"
+        />
+      </form>
     </header>
-    <main id="bigPokemon">  
-        <section class="pokemon">
-           <div class="titular"> <h1>
-            👹 ZOROARK
-            </h1> </div>
-            <figure><img class="poke_big" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/571.png" alt="Pokemonimg"> </figure>
-        </section>
-        <section class="stats">
-            <ul class="values">
-                <li>NO.</li>
-                <li>LEVEL</li>
-                <li>TYPE</li>
-                <li>HABILITY</li>
-                <li>HEIGHT</li>
-                <li>WEIGHT</li>
-            </ul>
-            <ul class="data">
-                <li>571</li>
-                <li>100</li>
-                <li>DARK</li>
-                <li>ILLUSION</li>
-                <li>1,6 m</li>
-                <li>81,1 Kg</li>
-            </ul>
-        </section>
+    <main id="bigPokemon">
+      <section class="pokemon">
+        <div class="titular"><h1>👹 ZOROARK</h1></div>
+        <figure>
+          <img
+            class="poke_big"
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/571.png"
+            alt="Pokemonimg"
+          />
+        </figure>
+      </section>
+      <section class="stats">
+        <ul class="values">
+          <li>NO.</li>
+          <li>LEVEL</li>
+          <li>TYPE</li>
+          <li>HABILITY</li>
+          <li>HEIGHT</li>
+          <li>WEIGHT</li>
+        </ul>
+        <ul class="data">
+          <li>571</li>
+          <li>100</li>
+          <li>DARK</li>
+          <li>ILLUSION</li>
+          <li>1,6 m</li>
+          <li>81,1 Kg</li>
+        </ul>
+      </section>
     </main>
 
+    <footer>
+      <h2>OTHeRS</h2>
 
-    <footer >
-         <h2> OTHeRS
-        </h2>
-         <section class="pokemons" id="smallPokemons">
-
-        <!-- <figure>
-            <img class="poke_small" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/143.png" alt=""> </figure>
-         <figure>  <img class="poke_small" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/376.png" alt=""> </figure> 
-         <figure>   <img class="poke_small" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/392.png" alt=""> </figure> 
-            <figure>  <img class="poke_small" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/545.png" alt=""> </figure> -->
-        </section>
-
+      <figure class="arrow__l">
+        <svg
+          viewBox="0 0 1024 1024"
+          class="arrow arrow__left"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="#000000"
+          transform="rotate(0)"
+        >
+          <g id="arrow__left" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              d="M768 903.232l-50.432 56.768L256 512l461.568-448 50.432 56.768L364.928 512z"
+              fill="#dd3131"
+            ></path>
+          </g>
+        </svg>
+      </figure>
+      <section class="pokemons" id="smallPokemons">
+     
+      </section>
+  
+      <figure class="arrow__r">
+        <svg
+          viewBox="0 0 1024 1024"
+          class="arrow arrow__right"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="#000000"
+          transform="rotate(180)"
+        >
+          <g id="arrow__right" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              d="M768 903.232l-50.432 56.768L256 512l461.568-448 50.432 56.768L364.928 512z"
+              fill="#dd3131"
+            ></path>
+          </g>
+        </svg>
+      </figure>
     </footer>
 
-
-
-
-
-<script src="/src/app/scripts/index.js" type="module"></script>
-</body>
+    <script src="../src/app/scripts/index.js" type="module"></script>
+  </body>
 </html>

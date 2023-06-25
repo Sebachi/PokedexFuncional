@@ -8,7 +8,8 @@ import { autocomplete } from "./autocomplete.js"
 import { newSearchPokemon } from "./searchbar.js"
 d.addEventListener('DOMContentLoaded', async () => {
 
- await printSmallPokemons(1,5)
- autocomplete(input_pokemon, arraypokemon)
- newSearchPokemon()
+    await printSmallPokemons(1,5)
+    arrows(1, 5)
+    autocomplete(input_pokemon, arraypokemon)
+    newSearchPokemon()
 })

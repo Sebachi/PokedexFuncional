@@ -259,6 +259,9 @@ h2{
 .pokemons{
     display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 35px;
+    margin: 0 10px;
 }
 .pokemons:hover{
     cursor: pointer;
@@ -267,7 +270,7 @@ h2{
     background-color:darkgray;
     border-radius: 8px 8px 8px 8px;
     height: 80px;
-    margin-left: 5px;
+    margin: 0;
  
 }
 .pokemons figure:hover{
@@ -278,6 +281,22 @@ h2{
    height: 75px;
    width: auto;
 }
+.arrow__l{
+    background-color: aqua;
+    display: contents;
+}
+.arrow__r{
+    background-color: aqua;
+    display: contents;
+}
+.arrow{
+    height: 30px;
+    cursor: pointer;
+}
+.arrow:hover{
+    opacity: 60%;
+    height: 40px;
+}
 
 @media (max-width: 880px){
     header {
@@ -285,23 +304,23 @@ h2{
     }
   
     footer {
-        display: grid;
-       grid-template-rows: 10% 90%;
+        display: flex;
+        grid-template-rows: 10% 90%;
         height: auto;
-       position: relative;
+        position: relative;
        
     }
     h2{
         margin-top: 20px;
         margin-bottom: 0px;
         position: relative ;
-        left: 80px;
+        left: 30px;
     }
     .pokemons{
         display: grid;
         grid-template-columns: 1fr 1fr;
         position: relative ;
-        left: 30px;
+        margin: 10px;
     }
 
 }

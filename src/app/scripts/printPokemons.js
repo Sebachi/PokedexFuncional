@@ -1,10 +1,12 @@
 import { toUpper, upperCase } from "lodash"
 import {URL_API} from "./data.js"
 import axios from "axios"
+import { getPokemon } from "./data.js"
 const d = document
 const smallPokemons = d.getElementById('smallPokemons')
 const bigPokemon = d.getElementById('bigPokemon')
-import { getPokemon } from "./data.js"
+const arrowLeft = d.getElementById("arrow__left")
+const arrowRight = d.getElementById("arrow__right")
 
 
 export const printSmallPokemons = async (a, b) => {
@@ -15,7 +17,7 @@ export const printSmallPokemons = async (a, b) => {
       const { other } = pokemonsData['sprites'];
       const spritesPokemon = other['official-artwork'].front_default;
       smallPokemons.innerHTML += `
-        <figure id='${i}'>
+        <figure id='${i.value}'>
           <img class="poke_small" src="${spritesPokemon}" alt="">
         </figure>
       `;
@@ -23,6 +25,35 @@ export const printSmallPokemons = async (a, b) => {
   }
   else{ alert('No more pokemons')}
 }
+
+export const arrows = (a, b) => {
+  arrowLeft.addEventListener("click", () => {
+    if (!(a <= 0) || (b >= 1281)) {
+      a = a 
+      b = b 
+      a = a - 4
+      b = b - 4 
+      printSmallPokemons(a, b);
+      console.log("izquierda", a, b);
+    } else {
+      console.log("Valor no válido");
+    }
+  });
+
+  arrowRight.addEventListener("click", () => {
+    if (!(a <= 0) || (b >= 1281)) {
+      a = a 
+      b = b 
+      a = a + 4
+      b = b + 4
+      printSmallPokemons(a, b);
+      console.log("derecha", a, b);
+    } else {
+      console.log("Valor no válido");
+    }
+  });
+};
+
 const arrayBigpokemon = []
  export const printBigPokemons = async (pokemonId) => {
   const pokemonsData =  await getPokemon(pokemonId)
