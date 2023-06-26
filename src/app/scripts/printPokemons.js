@@ -20,19 +20,7 @@ export const printSmallPokemons = async (a, b) => {
           <img class="poke_small" src="${spritesPokemon}" alt="">
         </figure>
       `;
-      const id = d.querySelector(".pokemon__id")
-      id.addEventListener("click", () => {
-        printBigPokemons(i)
-      })
     }
-    
-  //   const figure = d.querySelector(".pokemon__id")
-  //   figure.addEventListener("click", (event) => {
-  //     const clickedFigure = event.target.closest("figure");
-  //     const id = clickedFigure.id;
-  //    printBigPokemons(id);
-  //   })
-  // }
   }
   else if (a <= 0) {
   for (let i = 1007; i < 1011; i++) {
@@ -68,7 +56,7 @@ export const arrows = (a, b) => {
       a = a - 4
       b = b - 4 
       printSmallPokemons(a, b);
-      console.log("izquierda", a, b);
+      
 }});
 
   arrowRight.addEventListener("click", () => {
@@ -76,7 +64,7 @@ export const arrows = (a, b) => {
       a += 4
       b += 4
       printSmallPokemons(a, b);
-      console.log("derecha", a, b);
+     
   });
 };
 
@@ -147,7 +135,6 @@ return emoji
 
  export const printBigPokemons = async (pokemonId) => {
   const pokemonsData =  await getPokemon(pokemonId)
-  console.log(pokemonsData);
   const abilities = pokemonsData['abilities']
   const ability = abilities[0]['ability']['name'];
   const hAbility = abilities[1]['ability']['name'];
@@ -180,7 +167,7 @@ return emoji
             <li>TYPE</li>
             <li>2ND TYPE</li>
             <li>ABILITY</li>
-            <li class='pseudohidden'>H ABILITY</li>
+            <li >H. ABILITY</li>
             <li class='pseudohidden'>HEIGHT</li>
             <li class='pseudohidden'>WEIGHT</li>
         </ul>
@@ -189,7 +176,7 @@ return emoji
             <li>${type}</li>
             <li>${type2}</li>
             <li>${ability}</li>
-            <li class='pseudohidden'>${hAbility}</li>
+            <li >${hAbility}</li>
             <li class='pseudohidden'>${height} M</li>
             <li class='pseudohidden'>${weight} Kg</li>
         </ul>
