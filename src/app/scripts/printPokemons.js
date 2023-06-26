@@ -22,6 +22,16 @@ export const printSmallPokemons = async (a, b) => {
   }
   else{
     alert('no more pokemons in this section')
+    for (let i = 1; i < 5; i++) {
+      const pokemonsData = await getPokemon(i);
+      const { other } = pokemonsData['sprites'];
+      const spritesPokemon = other['official-artwork'].front_default;
+      smallPokemons.innerHTML += `
+        <figure id='${i}' class="pokemon_small">
+          <img class="poke_small" src="${spritesPokemon}" alt="">
+        </figure>
+      `;
+    }
   }
 
 }
@@ -46,7 +56,7 @@ const typesEmojis = (callback) => {
   let emoji = ''
   switch (callback) {
   case 'bug':
-  emoji =  '🪲'
+  emoji =  '🐞'
     break;
   case 'dark':
     emoji =  '👹'
@@ -91,7 +101,7 @@ const typesEmojis = (callback) => {
       emoji = '🪨'
     break;
     case 'steel':
-      emoji = '🪙'
+      emoji = '🛡️'
     break;
     case 'water':
       emoji = '💦'
