@@ -17,7 +17,7 @@ export const printSmallPokemons = async (a, b) => {
       const { other } = pokemonsData['sprites'];
       const spritesPokemon = other['official-artwork'].front_default;
       smallPokemons.innerHTML += `
-        <figure id='${i.value}'>
+        <figure id='${i}' class="pokemon_small">
           <img class="poke_small" src="${spritesPokemon}" alt="">
         </figure>
       `;
@@ -110,7 +110,7 @@ const typesEmojis = (callback) => {
       emoji =  '🍷'
       break;
       case 'normal':
-        emoji = '🧑🏻‍💼'
+        emoji = '🌀'
     break;
     case 'psychic':
       emoji = '🔮'
@@ -139,6 +139,7 @@ return emoji
   console.log(pokemonsData);
   const abilities = pokemonsData['abilities']
   const ability = abilities[0]['ability']['name'];
+  const hAbility = abilities[1]['ability']['name'];
   const name = pokemonsData['name']
   const types = pokemonsData['types']
   const type = pokemonsData['types'][0]['type']['name']
@@ -167,18 +168,38 @@ return emoji
             <li>NO.</li>
             <li>TYPE</li>
             <li>2ND TYPE</li>
-            <li>HABILITY</li>
-            <li>HEIGHT</li>
-            <li>WEIGHT</li>
+            <li>ABILITY</li>
+            <li class='pseudohidden'>H ABILITY</li>
+            <li class='pseudohidden'>HEIGHT</li>
+            <li class='pseudohidden'>WEIGHT</li>
         </ul>
         <ul class="data">
             <li>${id}</li>
             <li>${type}</li>
             <li>${type2}</li>
             <li>${ability}</li>
-            <li>${height} M</li>
-            <li>${weight} Kg</li>
+            <li class='pseudohidden'>${hAbility}</li>
+            <li class='pseudohidden'>${height} M</li>
+            <li class='pseudohidden'>${weight} Kg</li>
         </ul>
     </section>`
 
    }
+
+export const  readingSmallpokemon =  () => {
+  smallPokemons.addEventListener('click', async (event) => {
+      const clickedElement = event.target.closest('.pokemon_small') || null;
+      if (!(clickedElement === null))
+      {let pokeId = clickedElement.getAttribute("id") ;
+      let cpokeId = Number(pokeId) + 4
+      console.log(cpokeId);
+      await printBigPokemons(Number(pokeId))
+      await printSmallPokemons(Number(pokeId), cpokeId)
+
+    }
+      else{
+        console.log('no pokemon in this space');
+      }
+    })
+  }
+

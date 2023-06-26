@@ -115,6 +115,10 @@ position: relative;
 bottom: 5px;
  
 }
+.allselector{
+    display: flex;
+    align-items: center;
+}
 .pokeball_ico {
     margin: 0px 5px 0px 20px; 
     height: 30px;
@@ -190,6 +194,7 @@ ul {
       
        
     }
+
     .titular{
       
       z-index: 1;
@@ -211,6 +216,10 @@ ul {
         left: 60px;
         top: 160px;
     }
+    footer{
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 @media (min-width: 1000px){
@@ -230,12 +239,15 @@ ul {
   
     .stats{
         font-size: 12px;
-        width: 220px;
+        width: 240px;
         left: 50px;
         height: 300px;
     }
     main{
         height: 520px;
+    }
+    .pseudohidden{
+        display: none;
     }
 }
 @media (max-width: 500px) {

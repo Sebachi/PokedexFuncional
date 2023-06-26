@@ -19,15 +19,30 @@
   </head>
   <body>
     <header>
-        <div class="tittle"> 
-        <img src="./assets/pokeballico.png" alt="pokeball_ico" class="pokeball_ico">
-        <h1 class="titulo">PoKéDeX</h1></div>
-        <form autocomplete="off"  class="pokemon_search">
-            <div class="autocomplete">
-              <input id="input_pokemon" type="text" name="pokemonName" placeholder="Write a pokemon ...">
-            </div>
-            <input type="submit" class="pokemon_submit" value="🔎" id="search_pokemon">
-          </form>
+      <div class="tittle">
+        <img
+          src="./assets/pokeballico.png"
+          alt="pokeball_ico"
+          class="pokeball_ico"
+        />
+        <h1 class="titulo">PoKéDeX</h1>
+      </div>
+      <form autocomplete="off" class="pokemon_search">
+        <div class="autocomplete">
+          <input
+            id="input_pokemon"
+            type="text"
+            name="pokemonName"
+            placeholder="Write a pokemon ..."
+          />
+        </div>
+        <input
+          type="submit"
+          class="pokemon_submit"
+          value="🔎"
+          id="search_pokemon"
+        />
+      </form>
     </header>
     <main id="bigPokemon">
       <section class="pokemon">
@@ -46,23 +61,23 @@
           <li>LEVEL</li>
           <li>TYPE</li>
           <li>HABILITY</li>
-          <li>HEIGHT</li>
-          <li>WEIGHT</li>
+          <li class='pseudohidden'>HEIGHT</li>
+          <li class='pseudohidden'>WEIGHT</li>
         </ul>
         <ul class="data">
           <li>571</li>
           <li>100</li>
           <li>DARK</li>
           <li>ILLUSION</li>
-          <li>1,6 m</li>
-          <li>81,1 Kg</li>
+          <li class='pseudohidden'>1,6 m</li>
+          <li class='pseudohidden'>81,1 Kg</li>
         </ul>
       </section>
     </main>
 
     <footer>
       <h2>OTHeRS</h2>
-
+      <div class="allselector">
       <figure class="arrow__l" id="arrow__left">
         <svg
           viewBox="0 0 1024 1024"
@@ -72,7 +87,7 @@
           fill="#000000"
           transform="rotate(0)"
         >
-          <g  stroke-width="0"></g>
+          <g stroke-width="0"></g>
           <g
             id="SVGRepo_tracerCarrier"
             stroke-linecap="round"
@@ -86,10 +101,8 @@
           </g>
         </svg>
       </figure>
-      <section class="pokemons" id="smallPokemons">
-     
-      </section>
-  
+      <section class="pokemons" id="smallPokemons"></section>
+
       <figure class="arrow__r" id="arrow__right">
         <svg
           viewBox="0 0 1024 1024"
@@ -99,7 +112,7 @@
           fill="#000000"
           transform="rotate(180)"
         >
-          <g  stroke-width="0"></g>
+          <g stroke-width="0"></g>
           <g
             id="SVGRepo_tracerCarrier"
             stroke-linecap="round"
@@ -113,6 +126,7 @@
           </g>
         </svg>
       </figure>
+    </div>
     </footer>
 
     <script src="../src/app/scripts/index.js" type="module"></script>
