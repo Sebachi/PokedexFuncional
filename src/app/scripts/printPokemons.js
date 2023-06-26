@@ -18,10 +18,11 @@ export const printSmallPokemons = async (a, b) => {
           <img class="poke_small" src="${spritesPokemon}" alt="">
         </figure>
       `;
+
     }
   }
   else{
-    alert('no more pokemons in this section')
+    alert('no more pokemons after this ...')
     for (let i = 1; i < 5; i++) {
       const pokemonsData = await getPokemon(i);
       const { other } = pokemonsData['sprites'];
