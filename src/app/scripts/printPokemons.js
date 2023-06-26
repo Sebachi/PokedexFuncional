@@ -10,7 +10,7 @@ const arrowRight = d.querySelector(".arrow__right")
 
 export const printSmallPokemons = async (a, b) => {
   smallPokemons.innerHTML = ""
-  if (!(a <= 0) || !(b >= 1281) ) {
+  if (!(a <= 0) && !(b > 1011) ) {
     for (let i = a; i < b; i++) {
       const pokemonsData = await getPokemon(i);
       const { other } = pokemonsData['sprites'];
@@ -34,12 +34,34 @@ export const printSmallPokemons = async (a, b) => {
   //   })
   // }
   }
-  else{ alert('No more pokemons')}
+  else if (a <= 0) {
+  for (let i = 1007; i < 1011; i++) {
+    const pokemonsData = await getPokemon(i);
+    const { other } = pokemonsData['sprites'];
+    const spritesPokemon = other['official-artwork'].front_default;
+    smallPokemons.innerHTML += `
+      <figure id='${i}'>
+        <img class="poke_small" src="${spritesPokemon}" alt="">
+      </figure>
+    `;
+  }
+}
+else if (b > 1011) {
+for (let i = 1; i < 5; i++) {
+  const pokemonsData = await getPokemon(i);
+  const { other } = pokemonsData['sprites'];
+  const spritesPokemon = other['official-artwork'].front_default;
+  smallPokemons.innerHTML += `
+    <figure id='${i}'>
+      <img class="poke_small" src="${spritesPokemon}" alt="">
+    </figure>
+  `;
+}
+}
 }
 
-export const arrows = async(a, b) => {
+export const arrows = (a, b) => {
   arrowLeft.addEventListener("click", () => {
-    console.log("capturado");
     if (!(a <= 0) || (b >= 1281)) {
       a = a 
       b = b 
@@ -47,64 +69,59 @@ export const arrows = async(a, b) => {
       b = b - 4 
       printSmallPokemons(a, b);
       console.log("izquierda", a, b);
-    } else {
-      console.log("Valor no válido");
-    }
-  });
+}});
 
   arrowRight.addEventListener("click", () => {
-    if (!(a <= 0) || (b >= 1281)) {
-      a = a 
-      b = b 
-      a = a + 4
-      b = b + 4
+
+      a += 4
+      b += 4
       printSmallPokemons(a, b);
       console.log("derecha", a, b);
-    } else {
-      console.log("Valor no válido");
-    }
   });
 };
-
-// export const pokemonId = () => {
-//   const id = d.querySelector(".pokemon__id")
-//   id.addEventListener("click", () => {
-//     console.log("el id de estee es", );
-//   })
-// }
 
 const arrayBigpokemon = []
  export const printBigPokemons = async (pokemonId) => {
   const pokemonsData =  await getPokemon(pokemonId)
+  console.log(pokemonsData);
   const abilities = pokemonsData['abilities']
   const ability = abilities[0]['ability']['name'];
   const name = pokemonsData['name']
+  const types = pokemonsData['types']
   const type = pokemonsData['types'][0]['type']['name']
+  let type2
+   if (!(types[1] === undefined)){ type2 = pokemonsData['types'][1]['type']['name']}
+   else {type2 = `None`}
+
+  const type1Moji = typesEmojis(type) 
+  const type2Moji = typesEmojis(type2) 
   const height = pokemonsData['height']
   const weight = pokemonsData['weight']
   const sprite = pokemonsData['sprites']['other']['official-artwork'].front_default
-const id = pokemonsData['id']
+  
+
+  const id = pokemonsData['id']
       bigPokemon.innerHTML =
     `
        <section class="pokemon">
        <div class="titular"> <h1>
-         ${name}
+        ${type1Moji}${type2Moji} ${name}
         </h1> </div>
         <figure><img class="poke_big" src="${sprite}" alt="Pokemonimg"> </figure>
     </section>
     <section class="stats">
         <ul class="values">
             <li>NO.</li>
-            <li>LEVEL</li>
             <li>TYPE</li>
+            <li>2ND TYPE</li>
             <li>HABILITY</li>
             <li>HEIGHT</li>
             <li>WEIGHT</li>
         </ul>
         <ul class="data">
             <li>${id}</li>
-            <li>100</li>
             <li>${type}</li>
+            <li>${type2}</li>
             <li>${ability}</li>
             <li>${height} M</li>
             <li>${weight} Kg</li>
