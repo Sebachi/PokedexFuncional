@@ -178,11 +178,12 @@ ul {
 .values{
     display: flex;
     flex-direction: column;
-    font-weight: 520;
-  
+    font-weight: bolder;
+    color: $base-color;
 }
 .data{
     font-weight: 700;
+    
 }
 
 @media (max-width: 880px){
