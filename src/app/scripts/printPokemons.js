@@ -169,7 +169,7 @@ return emoji
             <li>${ability}</li>
             <li class='pseudohidden'>${hAbility}</li>
             <li class='pseudohidden'>${height} M</li>
-            <li class='pseudohidden'>${weight} Kg</li>
+            <li class='pseudohidden'>${weight} </li>
         </ul>
     </section>`
 
