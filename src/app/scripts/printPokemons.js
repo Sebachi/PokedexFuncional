@@ -22,7 +22,6 @@ export const printSmallPokemons = async (a, b) => {
     }
   }
   else{
-    alert('no more pokemons after this ...')
     for (let i = 1; i < 5; i++) {
       const pokemonsData = await getPokemon(i);
       const { other } = pokemonsData['sprites'];
