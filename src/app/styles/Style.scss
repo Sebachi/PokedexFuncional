@@ -349,8 +349,8 @@ h2{
     .pseudohidden{
         display: none;
     }
-    ul{
-        font-size: 12px;
+    .stats{
+        font-size: 14px;
         
     }
     .data{
@@ -360,6 +360,7 @@ h2{
         gap: 5px;
         display: flex;
         flex-direction: column;
+        font-size: 14px;
     }
     .values{
         gap: 3px;
