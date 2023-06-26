@@ -5,9 +5,8 @@ import { getPokemon } from "./data.js"
 const d = document
 const smallPokemons = d.getElementById('smallPokemons')
 const bigPokemon = d.getElementById('bigPokemon')
-const arrowLeft = d.getElementById("arrow__left")
-const arrowRight = d.getElementById("arrow__right")
-
+const arrowLeft = d.querySelector(".arrow__left")
+const arrowRight = d.querySelector(".arrow__right")
 
 export const printSmallPokemons = async (a, b) => {
   smallPokemons.innerHTML = ""
@@ -21,7 +20,19 @@ export const printSmallPokemons = async (a, b) => {
           <img class="poke_small" src="${spritesPokemon}" alt="">
         </figure>
       `;
+      const id = d.querySelector(".pokemon__id")
+      id.addEventListener("click", () => {
+        printBigPokemons(i)
+      })
     }
+    
+  //   const figure = d.querySelector(".pokemon__id")
+  //   figure.addEventListener("click", (event) => {
+  //     const clickedFigure = event.target.closest("figure");
+  //     const id = clickedFigure.id;
+  //    printBigPokemons(id);
+  //   })
+  // }
   }
   else if (a <= 0) {
   for (let i = 1007; i < 1011; i++) {
@@ -50,15 +61,15 @@ for (let i = 1; i < 5; i++) {
 }
 
 export const arrows = (a, b) => {
-  console.log('me escuchan 1');
-
   arrowLeft.addEventListener("click", () => {
-    console.log('me escuchas');
-      a -= 4
-      b -= 4 
-      printSmallPokemons(a,b);
+    if (!(a <= 0) || (b >= 1281)) {
+      a = a 
+      b = b 
+      a = a - 4
+      b = b - 4 
+      printSmallPokemons(a, b);
       console.log("izquierda", a, b);
-  });
+}});
 
   arrowRight.addEventListener("click", () => {
 
