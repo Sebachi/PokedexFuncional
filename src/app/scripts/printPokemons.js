@@ -39,8 +39,10 @@ export const printSmallPokemons = async (a, b) => {
 
 export const arrows = (a, b) => {
    arrowLeft.addEventListener("click", () => {
-      a = a - 4
-      b = b - 4 
+      // a = a - 4
+      a -= 4
+      // b = b - 4 
+      b -= 4
       printSmallPokemons(a, b);
 });
 

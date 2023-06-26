@@ -1,3 +1,4 @@
+@import 'variable';
 
 @font-face {
     font-family: 'Open Sans';
@@ -11,8 +12,9 @@
 }
 
 
+
 body{
-    background-color: #424242;
+    background-color: $background-dark;
     font-family: 'Open Sans', sans-serif;
     border-radius: 10px;
     display: grid;
@@ -25,8 +27,8 @@ body{
 header {
     display: flex;
     align-items: center;
-    background-color: #fe0000;
-    color: white;
+    background-color: $base-color;
+    color: #fff;
     font-size: 10px;
     height: 50px;
     width: auto;
@@ -52,10 +54,10 @@ header {
 }
 #input_pokemon{
     height: 30px;
-    border: 1px solid #d1d7db;
+    border: 1px solid $base-gray;
 }
 #input_pokemon:focus{
-    background-color: #d1d7db;
+    background-color: $base-gray
 }
 .pokemon_submit{
     cursor: pointer;
@@ -83,7 +85,7 @@ header {
   }
   .autocomplete-items {
     position: absolute;
-    border: 1px solid #d4d4d4;
+    border: 1px solid $base-gay2;
     text-transform: uppercase;
     border-bottom: none;
     border-top: none;
@@ -98,7 +100,7 @@ header {
     padding: 10px;
     cursor: pointer;
     background-color: #fff;
-    border-bottom: 1px solid #d4d4d4;
+    border-bottom: 1px solid $base-gay2;
   }
   .autocomplete-items div:hover {
     /*when hovering an item:*/
