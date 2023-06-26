@@ -243,27 +243,11 @@ ul {
         left: 50px;
         height: 300px;
     }
-    ul{
-        font-size: 12px;
-        
-    }
-    .data{
-        font-weight: 100;
-        font-size: 11px;
-        margin-right: 9px;
-        gap: 5px;
-        display: flex;
-        flex-direction: column;
-    }
-    .values{
-        gap: 3px;
-    }
+  
     main{
         height: 520px;
     }
-    .pseudohidden{
-        display: none;
-    }
+   
 }
 @media (max-width: 500px) {
     #input_pokemon{
@@ -357,4 +341,25 @@ h2{
         margin: 10px;
     }
 
+}
+@media (max-width: 600px){
+    .pseudohidden{
+        display: none;
+    }
+    ul{
+        font-size: 12px;
+        
+    }
+    .data{
+        font-weight:700;
+        font-size: 11px;
+        margin-right: 9px;
+        gap: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+    .values{
+        gap: 3px;
+        font-weight: bolder;
+    }
 }

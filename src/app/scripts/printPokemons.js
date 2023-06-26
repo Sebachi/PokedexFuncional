@@ -145,7 +145,7 @@ return emoji
             <li>TYPE</li>
             <li>2ND TYPE</li>
             <li>ABILITY</li>
-            <li >H. ABILITY</li>
+            <li class='pseudohidden'>H. ABILITY</li>
             <li class='pseudohidden'>HEIGHT</li>
             <li class='pseudohidden'>WEIGHT</li>
         </ul>
@@ -154,7 +154,7 @@ return emoji
             <li>${type}</li>
             <li>${type2}</li>
             <li>${ability}</li>
-            <li >${hAbility}</li>
+            <li class='pseudohidden'>${hAbility}</li>
             <li class='pseudohidden'>${height} M</li>
             <li class='pseudohidden'>${weight} Kg</li>
         </ul>
