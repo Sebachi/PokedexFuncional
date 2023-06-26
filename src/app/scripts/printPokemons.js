@@ -1,6 +1,4 @@
-import { toUpper, upperCase } from "lodash"
-import {URL_API} from "./data.js"
-import axios from "axios"
+
 import { getPokemon } from "./data.js"
 const d = document
 const smallPokemons = d.getElementById('smallPokemons')
@@ -10,7 +8,7 @@ const arrowRight = d.querySelector(".arrow__right")
 
 export const printSmallPokemons = async (a, b) => {
   smallPokemons.innerHTML = ""
-  if (!(a <= 0) && !(b > 1011) ) {
+  if (!(a <= 0) && !(a > 1007) ) {
     for (let i = a; i < b; i++) {
       const pokemonsData = await getPokemon(i);
       const { other } = pokemonsData['sprites'];
@@ -22,50 +20,25 @@ export const printSmallPokemons = async (a, b) => {
       `;
     }
   }
-  else if (a <= 0) {
-  for (let i = 1007; i < 1011; i++) {
-    const pokemonsData = await getPokemon(i);
-    const { other } = pokemonsData['sprites'];
-    const spritesPokemon = other['official-artwork'].front_default;
-    smallPokemons.innerHTML += `
-      <figure id='${i}'>
-        <img class="poke_small" src="${spritesPokemon}" alt="">
-      </figure>
-    `;
+  else{
+    alert('no more pokemons in this section')
   }
-}
-else if (b > 1011) {
-for (let i = 1; i < 5; i++) {
-  const pokemonsData = await getPokemon(i);
-  const { other } = pokemonsData['sprites'];
-  const spritesPokemon = other['official-artwork'].front_default;
-  smallPokemons.innerHTML += `
-    <figure id='${i}'>
-      <img class="poke_small" src="${spritesPokemon}" alt="">
-    </figure>
-  `;
-}
-}
+
 }
 
 export const arrows = (a, b) => {
-  arrowLeft.addEventListener("click", () => {
-    if (!(a <= 0) || (b >= 1281)) {
-      a = a 
-      b = b 
+   arrowLeft.addEventListener("click", () => {
       a = a - 4
       b = b - 4 
       printSmallPokemons(a, b);
-      
-}});
+});
 
   arrowRight.addEventListener("click", () => {
-
       a += 4
       b += 4
       printSmallPokemons(a, b);
-     
   });
+ 
 };
 
 
@@ -150,8 +123,8 @@ return emoji
    if (!(types[1] === undefined)){ type2 = pokemonsData['types'][1]['type']['name']}
    else {type2 = `None`}
 
-  const type1Moji = typesEmojis(type) 
-  const type2Moji = typesEmojis(type2) 
+  const type1Moji = typesEmojis(type)
+  const type2Moji = typesEmojis(type2)
   const height = pokemonsData['height']
   const weight = pokemonsData['weight']
   const sprite = pokemonsData['sprites']['other']['official-artwork'].front_default
@@ -198,7 +171,6 @@ export const  readingSmallpokemon =  () => {
       console.log(cpokeId);
       await printBigPokemons(Number(pokeId))
       await printSmallPokemons(Number(pokeId), cpokeId)
-
     }
       else{
         console.log('no pokemon in this space');
