@@ -69,7 +69,71 @@ export const arrows = (a, b) => {
   });
 };
 
-const arrayBigpokemon = []
+
+const typesEmojis = (callback) => { 
+  let emoji = ''
+  switch (callback) {
+  case 'bug':
+  emoji =  '🪲'
+    break;
+  case 'dark':
+    emoji =  '👹'
+    break;
+  case 'dragon':
+    emoji =   '🐉'
+      break;
+  case 'electric':
+    emoji =  '⚡'
+    break;
+  case 'fairy':
+    emoji =  '🧚‍♀️'
+    break;
+  case 'fighting':
+    emoji =  '🥊'
+    break;
+    case 'fire':
+      emoji =  '🔥'
+    break;
+    case 'flying':
+      emoji =  '🦅'
+    break;
+    case 'ghost':
+      emoji = '👻'
+    break;
+    case 'grass':
+      emoji = '🍃'
+    break;
+    case 'ice':
+      emoji =  '🧊'
+    break;
+    case 'poison':
+      emoji =  '🍷'
+      break;
+      case 'normal':
+        emoji = '🧑🏻‍💼'
+    break;
+    case 'psychic':
+      emoji = '🔮'
+    break;
+    case 'rock':
+      emoji = '🪨'
+    break;
+    case 'steel':
+      emoji = '🪙'
+    break;
+    case 'water':
+      emoji = '💦'
+    break;
+    case 'ground':
+      emoji =  '⛱️'
+    break;
+  default: emoji = ''
+  break;
+  
+}
+return emoji
+}
+
  export const printBigPokemons = async (pokemonId) => {
   const pokemonsData =  await getPokemon(pokemonId)
   console.log(pokemonsData);
@@ -81,27 +145,20 @@ const arrayBigpokemon = []
   let type2
    if (!(types[1] === undefined)){ type2 = pokemonsData['types'][1]['type']['name']}
    else {type2 = `None`}
+
+  const type1Moji = typesEmojis(type) 
+  const type2Moji = typesEmojis(type2) 
   const height = pokemonsData['height']
   const weight = pokemonsData['weight']
   const sprite = pokemonsData['sprites']['other']['official-artwork'].front_default
-  switch (type) {
-    case 'Oranges':
-    
-      break;
-    case 'Mangoes':
-    case 'Papayas':
-     
-      break;
-    default:
-    
-  }
+  
 
   const id = pokemonsData['id']
       bigPokemon.innerHTML =
     `
        <section class="pokemon">
        <div class="titular"> <h1>
-         ${name}
+        ${type1Moji}${type2Moji} ${name}
         </h1> </div>
         <figure><img class="poke_big" src="${sprite}" alt="Pokemonimg"> </figure>
     </section>
