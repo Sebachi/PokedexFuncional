@@ -72,14 +72,31 @@ export const arrows = (a, b) => {
 const arrayBigpokemon = []
  export const printBigPokemons = async (pokemonId) => {
   const pokemonsData =  await getPokemon(pokemonId)
+  console.log(pokemonsData);
   const abilities = pokemonsData['abilities']
   const ability = abilities[0]['ability']['name'];
   const name = pokemonsData['name']
+  const types = pokemonsData['types']
   const type = pokemonsData['types'][0]['type']['name']
+  let type2
+   if (!(types[1] === undefined)){ type2 = pokemonsData['types'][1]['type']['name']}
+   else {type2 = `None`}
   const height = pokemonsData['height']
   const weight = pokemonsData['weight']
   const sprite = pokemonsData['sprites']['other']['official-artwork'].front_default
-const id = pokemonsData['id']
+  switch (type) {
+    case 'Oranges':
+    
+      break;
+    case 'Mangoes':
+    case 'Papayas':
+     
+      break;
+    default:
+    
+  }
+
+  const id = pokemonsData['id']
       bigPokemon.innerHTML =
     `
        <section class="pokemon">
@@ -91,16 +108,16 @@ const id = pokemonsData['id']
     <section class="stats">
         <ul class="values">
             <li>NO.</li>
-            <li>LEVEL</li>
             <li>TYPE</li>
+            <li>2ND TYPE</li>
             <li>HABILITY</li>
             <li>HEIGHT</li>
             <li>WEIGHT</li>
         </ul>
         <ul class="data">
             <li>${id}</li>
-            <li>100</li>
             <li>${type}</li>
+            <li>${type2}</li>
             <li>${ability}</li>
             <li>${height} M</li>
             <li>${weight} Kg</li>
