@@ -5,9 +5,8 @@ import { getPokemon } from "./data.js"
 const d = document
 const smallPokemons = d.getElementById('smallPokemons')
 const bigPokemon = d.getElementById('bigPokemon')
-const arrowLeft = d.getElementById("arrow__left")
-const arrowRight = d.getElementById("arrow__right")
-
+const arrowLeft = d.querySelector(".arrow__left")
+const arrowRight = d.querySelector(".arrow__right")
 
 export const printSmallPokemons = async (a, b) => {
   smallPokemons.innerHTML = ""
@@ -17,17 +16,30 @@ export const printSmallPokemons = async (a, b) => {
       const { other } = pokemonsData['sprites'];
       const spritesPokemon = other['official-artwork'].front_default;
       smallPokemons.innerHTML += `
-        <figure id='${i.value}'>
+        <figure id='${i.value}'  class="pokemon__id">
           <img class="poke_small" src="${spritesPokemon}" alt="">
         </figure>
       `;
+      const id = d.querySelector(".pokemon__id")
+      id.addEventListener("click", () => {
+        printBigPokemons(i)
+      })
     }
+    
+  //   const figure = d.querySelector(".pokemon__id")
+  //   figure.addEventListener("click", (event) => {
+  //     const clickedFigure = event.target.closest("figure");
+  //     const id = clickedFigure.id;
+  //    printBigPokemons(id);
+  //   })
+  // }
   }
   else{ alert('No more pokemons')}
 }
 
-export const arrows = (a, b) => {
+export const arrows = async(a, b) => {
   arrowLeft.addEventListener("click", () => {
+    console.log("capturado");
     if (!(a <= 0) || (b >= 1281)) {
       a = a 
       b = b 
@@ -53,6 +65,13 @@ export const arrows = (a, b) => {
     }
   });
 };
+
+// export const pokemonId = () => {
+//   const id = d.querySelector(".pokemon__id")
+//   id.addEventListener("click", () => {
+//     console.log("el id de estee es", );
+//   })
+// }
 
 const arrayBigpokemon = []
  export const printBigPokemons = async (pokemonId) => {
