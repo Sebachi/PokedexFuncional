@@ -11,7 +11,7 @@ const arrowRight = d.getElementById("arrow__right")
 
 export const printSmallPokemons = async (a, b) => {
   smallPokemons.innerHTML = ""
-  if (!(a <= 0) || !(b >= 1281) ) {
+  if (!(a <= 0) && !(b > 1011) ) {
     for (let i = a; i < b; i++) {
       const pokemonsData = await getPokemon(i);
       const { other } = pokemonsData['sprites'];
@@ -23,34 +23,49 @@ export const printSmallPokemons = async (a, b) => {
       `;
     }
   }
-  else{ alert('No more pokemons')}
+  else if (a <= 0) {
+  for (let i = 1007; i < 1011; i++) {
+    const pokemonsData = await getPokemon(i);
+    const { other } = pokemonsData['sprites'];
+    const spritesPokemon = other['official-artwork'].front_default;
+    smallPokemons.innerHTML += `
+      <figure id='${i}'>
+        <img class="poke_small" src="${spritesPokemon}" alt="">
+      </figure>
+    `;
+  }
+}
+else if (b > 1011) {
+for (let i = 1; i < 5; i++) {
+  const pokemonsData = await getPokemon(i);
+  const { other } = pokemonsData['sprites'];
+  const spritesPokemon = other['official-artwork'].front_default;
+  smallPokemons.innerHTML += `
+    <figure id='${i}'>
+      <img class="poke_small" src="${spritesPokemon}" alt="">
+    </figure>
+  `;
+}
+}
 }
 
 export const arrows = (a, b) => {
+  console.log('me escuchan 1');
+
   arrowLeft.addEventListener("click", () => {
-    if (!(a <= 0) || (b >= 1281)) {
-      a = a 
-      b = b 
-      a = a - 4
-      b = b - 4 
-      printSmallPokemons(a, b);
+    console.log('me escuchas');
+      a -= 4
+      b -= 4 
+      printSmallPokemons(a,b);
       console.log("izquierda", a, b);
-    } else {
-      console.log("Valor no válido");
-    }
   });
 
   arrowRight.addEventListener("click", () => {
-    if (!(a <= 0) || (b >= 1281)) {
-      a = a 
-      b = b 
-      a = a + 4
-      b = b + 4
+
+      a += 4
+      b += 4
       printSmallPokemons(a, b);
       console.log("derecha", a, b);
-    } else {
-      console.log("Valor no válido");
-    }
   });
 };
 
