@@ -136,8 +136,13 @@ return emoji
  export const printBigPokemons = async (pokemonId) => {
   const pokemonsData =  await getPokemon(pokemonId)
   const abilities = pokemonsData['abilities']
-  const ability = abilities[0]['ability']['name'];
-  const hAbility = abilities[1]['ability']['name'];
+  let ability
+  if (!(abilities[0] === undefined)){ ability= abilities[0]['ability']['name']}
+  else {ability= `None`}
+
+  let hAbility
+  if (!(abilities[1] === undefined)){ hAbility= abilities[1]['ability']['name']}
+  else {hAbility = `None`}
   const name = pokemonsData['name']
   const types = pokemonsData['types']
   const type = pokemonsData['types'][0]['type']['name']
